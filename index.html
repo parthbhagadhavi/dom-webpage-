@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Website Homepage HTML and CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="root">
+    <!-- <header class="header">
+      <nav class="navbar">
+        <h2 class="logo"><a href="#">Coding</a></h2>
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" id="hamburger-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+            <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </label>
+        <ul class="links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+        <div class="buttons">
+          <a href="#" class="signin">Sign In</a>
+          <a href="#" class="signup">Sign Up</a>
+        </div>
+      </nav>
+    </header>
+    <section class="hero-section">
+      <div class="hero">
+        <h2>Mobile App Development</h2>
+        <p>
+          Join us in the exciting world of programming and turn your ideas into
+          reality. Unlock the world of endless possibilities - learn to code and
+          shape the digital future with us.
+        </p>
+        <div class="buttons">
+          <a href="#" class="join">Join Now</a>
+          <a href="#" class="learn">Learn More</a>
+        </div>
+      </div>
+      <div class="img">
+        <img src="./hero-bg.png" alt="hero image" />
+      </div>
+    </section> -->
+
+    <SCript>
+        let body = document.getElementById('root');
+        let data = [{
+            h2: "Coding",
+
+            li1: "Home",
+            li2: "About Us",
+            li3: "Services",
+            li4: "Portfolio",
+            li5: "Contact Us",
+            btn1: "Sign In",
+            btn2: "Sign Up",
+            heading2: "Mobile App Development",
+            paragraph: 'Join us in the exciting world of programming and turn your ideas into reality. Unlock the world of endless possibilities - learn to code and shape the digital future with us.',
+            btn3: 'Join Now',
+            btn4: 'Learn More',
+            img2: './hero-bg.png',
+
+        },]
+
+
+        data.forEach((event) => {
+            let header = document.createElement('header');
+            header.className = 'header';
+            body.appendChild(header);
+
+            let nav = document.createElement('nav');
+            nav.className = 'navbar';
+            header.appendChild(nav);
+
+
+
+            let h2 = document.createElement('h2');
+            h2.className = 'logo';
+            nav.appendChild(h2);
+
+            let anchor = document.createElement('a');
+            anchor.href = "#";
+            anchor.textContent = event.h2;
+            h2.appendChild(anchor);
+
+            let input = document.createElement('input');
+            input.type = 'checkbox';
+            input.id = 'menu-toggle';
+            nav.appendChild(input);
+
+            let label = document.createElement('label');
+            label.setAttribute('for', 'menu-toggle');
+            label.id = 'hamburger-btn';
+            nav.appendChild(label)
+
+            let svg = document.createElement('svg');
+            svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+            svg.setAttribute('height', '24');
+            svg.setAttribute('viewbox', '0 0 24 24');
+            svg.setAttribute('width', '24');
+
+            label.appendChild(svg);
+
+
+            let path = document.createElement('path');
+            path.setAttribute('d', 'M3 12h18M3 6h18M3 18h18');
+            path.setAttribute('stroke', 'currentColor');
+            path.setAttribute('stroke-width', '2');
+            path.setAttribute('stroke-linecap', 'round');
+            svg.appendChild(path);
+
+
+
+
+            let ul = document.createElement('ul');
+            ul.className = 'links';
+            nav.appendChild(ul);
+
+            let li = document.createElement('li');
+            ul.appendChild(li);
+
+            let anchor1 = document.createElement('a');
+            anchor1.href = '#';
+            anchor1.textContent = event.li1;
+            li.appendChild(anchor1);
+
+            let li2 = document.createElement('li');
+            ul.appendChild(li2)
+            let anchor2 = document.createElement('a');
+            anchor2.href = '#';
+            anchor2.textContent = event.li2;
+            li2.appendChild(anchor2);
+
+            let li3 = document.createElement('li');
+            ul.appendChild(li3)
+            let anchor3 = document.createElement('a');
+            anchor3.href = '#';
+            anchor3.textContent = event.li3;
+            li3.appendChild(anchor3);
+
+
+            let li4 = document.createElement('li');
+            ul.appendChild(li4);
+            let anchor4 = document.createElement('a');
+            anchor4.href = '#';
+            anchor4.textContent = event.li4;
+            li4.appendChild(anchor4);
+
+            let li5 = document.createElement('li');
+            ul.appendChild(li5);
+            let anchor5 = document.createElement('a');
+            anchor5.href = '#';
+            anchor5.textContent = event.li5;
+            anchor5.textContent = event.li5;
+            li5.appendChild(anchor5);
+
+
+
+
+
+            let div1 = document.createElement('div');
+            div1.className = 'buttons';
+            nav.appendChild(div1);
+
+            let anchor6 = document.createElement('a');
+            anchor6.href = '#';
+            anchor6.className = 'signin';
+            anchor6.textContent = event.btn1;
+            div1.appendChild(anchor6);
+
+            let anchor7 = document.createElement('a');
+            anchor7.href = '#';
+            anchor7.className = 'signup';
+            anchor7.textContent = event.btn2;
+
+            div1.appendChild(anchor7);
+
+
+
+
+
+
+            let section = document.createElement('section');
+            section.className = 'hero-section';
+            root.appendChild(section);
+
+
+            let div2 = document.createElement('div');
+            div2.className = 'hero';
+            section.appendChild(div2);
+
+
+            let heading2 = document.createElement('h2');
+            heading2.textContent = event.heading2;
+            div2.appendChild(heading2);
+
+            let paragraph2 = document.createElement('p');
+            paragraph2.textContent = event.paragraph;
+            div2.appendChild(paragraph2);
+
+            let div3 = document.createElement('div');
+            div3.className = 'buttons';
+
+          div2.appendChild(div3);
+            let anchor8=document.createElement('a');
+            anchor8.href='#';
+            anchor8.className='join';
+            anchor8.textContent=event.btn3;
+            div3.appendChild(anchor8);
+            
+
+
+            let anchor9=document.createElement('a');
+            anchor9.href='#';
+            anchor9.className='learn';
+            anchor9.textContent=event.btn4;
+            div3.appendChild(anchor9);
+          
+
+            div4=document.createElement('div');
+            div4.className='img';
+            section.appendChild(div4);
+
+
+            let img2=document.createElement('img');
+            img2.src=event.img2;
+            img2.setAttribute('alt','hero image')
+                div4.appendChild(img2)
+            console.log(body);
+        })
+
+    </SCript>
+</body>
+
+</html>
